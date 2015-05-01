@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <title>cuepoint-とは？</title>
+        <script src="js/cuepoint.js"></script>
+        <script>
+            window.onload = function(){
+                //Slides object with a time (integer) and a html string
+                var slides = {
+                    0: "This is the first subtitle. You can put html in here if you like",
+                    4: "A fluffy thing eating some grass.",
+                    12: "Oh look it's a castle on a hill. Nice",
+                    23: "Some horses",
+                    34: "Wow look at those woolly sheep eating grass.",
+                    40: "For more information on this plugin visit github/owainlewis or email owain@owainlewis.com",
+                    50: "Cuepoint.js is an open source plugin for adding subtitles and cue-points to your HTML5 video"
+                }
+                //Start cuepoint and pass in our the subtitles we want
+                cuepoint.init(slides);
+            };
+        </script>
+    </head>
+    <body>
+
+        <!-- Start Cuepoint -->
+        <section>
+            <button onclick="cuepoint.setTime(20);">[20]</button> 
+            <button onclick="cuepoint.setTime(30);">[30]</button> 
+            <button onclick="cuepoint.setTime(40);">[40]</button> 
+            <button onclick="cuepoint.setTime(50);">[50]</button> 
+        </section>
+        <section id='cuePlayer'>
+            <video id="video" width="768" preload="auto" controls="" poster="images/poster.jpg">
+                <source src="http://cuepoint.org/dartmoor.mp4">
+                <source src="http://cuepoint.org/dartmoor-mobile.mp4">
+                <source src="http://cuepoint.org/dartmoor.webm">
+                <source src="http://cuepoint.org/dartmoor.ogv">
+            </video>
+            <div id='subtitles'></div>
+        </section>
+        <!-- //Start Cuepoint -->
+
+    </body>
+</html>
